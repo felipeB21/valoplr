@@ -1,8 +1,6 @@
-"use client";
 import Link from "next/link";
 import { ThemeToggle } from "./theme/toggle";
-import { usePathname } from "next/navigation";
-
+import Session from "./auth/session";
 const NAV_LINKS = [
   { title_name: "Players", path_name: "players" },
   { title_name: "Teams", path_name: "teams" },
@@ -11,8 +9,6 @@ const NAV_LINKS = [
 ] as const;
 
 export default function Header() {
-  const pathname = usePathname();
-
   return (
     <header className="dark:bg-neutral-900/30 bg-neutral-50/30">
       <div className="wrapper flex items-center justify-between py-2">
@@ -36,11 +32,7 @@ export default function Header() {
               {NAV_LINKS.map((link) => (
                 <li key={link.path_name}>
                   <Link
-                    className={`text-sm dark:text-neutral-300 text-neutral-700 hover:dark:text-white hover:text-black ${
-                      pathname === `/${link.path_name}`
-                        ? "text-blue-500 dark:text-blue-400 font-bold"
-                        : ""
-                    }`}
+                    className="text-sm dark:text-neutral-300 text-neutral-700 hover:dark:text-white hover:text-black"
                     href={`/${link.path_name}`}
                   >
                     {link.title_name}
@@ -50,7 +42,10 @@ export default function Header() {
             </ul>
           </nav>
         </div>
-        <ThemeToggle />
+        <div className="flex items-center gap-2">
+          <ThemeToggle />
+          <Session />
+        </div>
       </div>
     </header>
   );

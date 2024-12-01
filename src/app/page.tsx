@@ -10,14 +10,14 @@ export default function Home() {
       <main className="wrapper mt-20">
         <div className="flex gap-2 bg-purple-500 rounded-xl">
           <Image
-            src={"/tenz.avif"}
+            src={"/pro-players/tenz.avif"}
             alt="Hero"
             width={1000}
             height={1000}
             className="w-auto h-auto shadow-inner"
           />
           <div className="flex flex-col justify-between px-2 py-4">
-            <h1 className="text-4xl font-bold text-pretty text-neutral-50">
+            <h1 className="text-3xl font-bold uppercase text-pretty text-neutral-50">
               Want to shine as a{" "}
               <span className="text-cyan-300">Pro Player</span>, register your
               <span className="text-yellow-300"> Esports Team</span>, or create

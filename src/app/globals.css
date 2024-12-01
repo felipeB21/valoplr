@@ -2,8 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  /* Your default theme */
+.auth-input {
+  @apply w-full py-2 px-4 dark:bg-neutral-800 bg-neutral-200;
 }
 
 [data-theme="dark"] {
